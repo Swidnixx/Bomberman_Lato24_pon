@@ -21,6 +21,16 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Ustawiamy kierunek na podstawie Inputu gracza
+        if (Input.GetKey(upKey))
+            movementController.SetDirection(Vector3.forward);
+        else if (Input.GetKey(downKey))
+            movementController.SetDirection(Vector3.back);
+        else if (Input.GetKey(leftKey))
+            movementController.SetDirection(Vector3.left);
+        else if(Input.GetKey(rightKey))
+            movementController.SetDirection(Vector3.right);
 
+        else
+            movementController.SetDirection(Vector3.zero);
     }
 }
