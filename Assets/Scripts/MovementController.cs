@@ -27,19 +27,26 @@ public class MovementController : MonoBehaviour
     {
         // Obliczamy moveVector jako kierunek pomno¿ony razy
         // prêdkoœæ i czas od ostatniego ticka silnika fizyki
-        
+        Vector3 moveVector = Direction * speed * Time.fixedDeltaTime;    
         // przesuwamy pozycjê rigidbody gracza
         // jako obecna plus moveVector
-        
+        Rigidbody.MovePosition( Rigidbody.position + moveVector );
     }
 
     private void RotateObject()
     {
         // jeœli kierunek jest ustawiony (ró¿ny od Vector3.zero)
         // oblicz obrót i obróæ postaæ o wyliczony obrót
-
+        if (Direction != Vector3.zero)
+        {
+            Quaternion rot = Quaternion.LookRotation(Direction, Vector3.up);
+            Rigidbody.MoveRotation(rot); 
+        }
     }
 
     // dodaj ustawianie kierunku
-
+    public void SetDirection(Vector3 direction)
+    {
+        Direction = direction;
+    }
 }

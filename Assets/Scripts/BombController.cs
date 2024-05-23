@@ -32,14 +32,32 @@ public class BombController : MonoBehaviour
     private void PlaceBomb()
     {
         // przerywamy jeœli gracz stoi na bombie
-        
+        if (stayOnBomb) return;
         // zmniejszamy liczbê dostêpnych bomb
-        
+        bombsRemaining--;
         // stawiamy bombê korzystaj¹c z BombSpawnera
         // podajemy w³asn¹ aktualn¹ pozycjê
-        
+        Bomb bomb = BombSpawner.Instance.PlaceBomb(transform.position);
+        bomb.SetOwner(this);
         // ustawiamy ¿e stoimy na bombie aby zapobiec
         // stawianiu kolejnej do czasu odejœcia z kolejnej
-        
+        stayOnBomb = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.layer == Bomb.BOMB_LAYER_MASK)
+        {
+            stayOnBomb = false;
+            other.isTrigger = false;
+        }
+    }
+
+    public void BombReturned()
+    {
+        if (bombsRemaining < bombAmount)
+            bombsRemaining++;
+        else
+            Debug.LogError("You can place more bombs than should be able to");
     }
 }
