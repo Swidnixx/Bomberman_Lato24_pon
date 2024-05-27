@@ -13843,6 +13843,7 @@ GameObject:
   - component: {fileID: 711087904}
   - component: {fileID: 711087905}
   - component: {fileID: 711087907}
+  - component: {fileID: 711087908}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -13906,6 +13907,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb6d97827786b1846910085ff68b9f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &711087908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711087903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe9f59e3ae60024586534de3227255b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupPrefabs:
+  - {fileID: 5972225382532048819, guid: 4000e8586a6ef504c9fd8cd105df17f9, type: 3}
+  - {fileID: 601025504070846396, guid: c501a24629320154b91a02f8998cff5a, type: 3}
+  - {fileID: 3369577516225718135, guid: 2b7b7c0a2ac33b14c840d4a66ce5713e, type: 3}
+  spawnChance: 1
 --- !u!1 &716851245
 GameObject:
   m_ObjectHideFlags: 0
@@ -36468,7 +36486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputKey: 32
   bombAmount: 1
-  explosionRadius: 2
+  explosionRadius: 1
 --- !u!114 &1726604580
 MonoBehaviour:
   m_ObjectHideFlags: 0
