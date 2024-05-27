@@ -5,6 +5,8 @@ using UnityEngine;
 
 public abstract class Pickup : MonoBehaviour
 {
+    public static event EventHandler OnPicked;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag(PlayerController.PLAYER_TAG))
@@ -15,6 +17,7 @@ public abstract class Pickup : MonoBehaviour
 
     protected virtual void Picked(GameObject player)
     {
+        OnPicked?.Invoke(this, EventArgs.Empty);
         Destroy(gameObject);
     }
 }

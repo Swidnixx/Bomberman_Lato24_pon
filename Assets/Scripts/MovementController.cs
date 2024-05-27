@@ -4,6 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class MovementController : MonoBehaviour
 {
+    public int SpeedNormalized => (int)(speed / speedIncreaseAmount);
+
     [SerializeField] private bool isRotating = true;
 
     [SerializeField] private float speed = 2.5f;
