@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class BombController : MonoBehaviour
 {
+    public int BombAmount => bombAmount;
+    public int ExplosionRadius => explosionRadius;
+
+
     [Header("Key bindings")]
     [SerializeField] private KeyCode inputKey = KeyCode.Space;
 
@@ -15,7 +19,7 @@ public class BombController : MonoBehaviour
 
     private int bombsRemaining;
     private bool stayOnBomb = false;
-    
+
     private void Awake()
     {
         bombsRemaining = bombAmount;
@@ -58,5 +62,16 @@ public class BombController : MonoBehaviour
         {
             bombsRemaining++;
         }
+    }
+
+    public void IncreaseBombAmount(int amount=1)
+    {
+        bombAmount += amount;
+        bombsRemaining++;
+    }
+
+    public void IncreaseExplosionRadius(int amount =1)
+    {
+        explosionRadius += amount;
     }
 }

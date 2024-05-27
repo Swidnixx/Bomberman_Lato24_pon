@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -7,6 +8,9 @@ public class MovementController : MonoBehaviour
 
     [SerializeField] private float speed = 2.5f;
     [SerializeField] private float rotationSpeed = 7f;
+
+    [SerializeField] float speedIncreaseAmount = 0.5f;
+    [SerializeField] private float maxSpeed = 8;
 
     public Vector3 Direction { get; private set; } = Vector3.zero;
     public Rigidbody Rigidbody { get; private set; }
@@ -51,4 +55,11 @@ public class MovementController : MonoBehaviour
         Direction = direction;
     }
 
+    internal void IncreaseMovementSpeed()
+    {
+        if(speed + speedIncreaseAmount <= maxSpeed)
+        {
+            speed += speedIncreaseAmount;
+        }
+    }
 }
