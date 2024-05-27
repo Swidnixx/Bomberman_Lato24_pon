@@ -6,7 +6,7 @@ public class PickupSpeed : Pickup
 {
     protected override void Picked(GameObject player)
     {
-        base.Picked(player);
         player.GetComponent<MovementController>().IncreaseMovementSpeed();
+        base.Picked(player);
     }
 }

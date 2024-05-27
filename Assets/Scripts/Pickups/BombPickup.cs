@@ -6,7 +6,7 @@ public class BombPickup :Pickup
 {
     protected override void Picked(GameObject player)
     {
-        base.Picked(player);
         player.GetComponent<BombController>().IncreaseBombAmount();
+        base.Picked(player);
     }
 }

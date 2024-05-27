@@ -38,7 +38,7 @@ public class UI_PlayerInfoPanel : MonoBehaviour
 
     void UpdateAllStats(object sender, EventArgs e)
     {
-        for(int i=1; i<infoContainer.childCount; i++)
+        for(int i= infoContainer.childCount-1; i>0; i--)
         {
             Destroy(infoContainer.GetChild(i).gameObject);
         }

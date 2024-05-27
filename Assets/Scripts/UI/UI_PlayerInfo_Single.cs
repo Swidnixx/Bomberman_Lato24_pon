@@ -25,7 +25,7 @@ public class UI_PlayerInfo_Single : MonoBehaviour
 
     void SetValue(int value)
     {
-        for(int i=1; i<barContainer.childCount; i++)
+        for(int i= barContainer.childCount-1; i>0; i--)
         {
             Destroy(barContainer.GetChild(i).gameObject);
         }
