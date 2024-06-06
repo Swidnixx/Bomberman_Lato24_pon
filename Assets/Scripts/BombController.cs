@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -59,5 +60,16 @@ public class BombController : MonoBehaviour
             bombsRemaining++;
         else
             Debug.LogError("You can place more bombs than should be able to");
+    }
+
+    internal void IncreaseExplosionRadius()
+    {
+        explosionRadius++;
+    }
+
+    internal void IncreaseBombAmount()
+    {
+        bombAmount++;
+        bombsRemaining++;
     }
 }

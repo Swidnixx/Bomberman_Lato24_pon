@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -48,5 +49,10 @@ public class MovementController : MonoBehaviour
     public void SetDirection(Vector3 direction)
     {
         Direction = direction;
+    }
+
+    internal void IncreaseSpeed()
+    {
+        speed += 0.5f;
     }
 }

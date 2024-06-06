@@ -62,7 +62,8 @@ public class ExplosionSpawner : MonoBehaviour
 
         if (wall.layer == DESTRUCTIBLE_LAYER_MASK)
         {
-            Destroy(wall);
+            //Destroy(wall);
+            wall.GetComponent<DestructibleWall>().DestroyWall();
         }
         return true;
     }
