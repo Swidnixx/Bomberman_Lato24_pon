@@ -16,7 +16,9 @@ public class BombController : MonoBehaviour
 
     private int bombsRemaining;
     private bool stayOnBomb = false;
-    
+
+    public int BombAmount => bombAmount;
+
     private void Awake()
     {
         bombsRemaining = bombAmount;

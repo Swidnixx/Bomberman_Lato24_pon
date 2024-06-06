@@ -11,6 +11,7 @@ public class MovementController : MonoBehaviour
 
     public Vector3 Direction { get; private set; } = Vector3.zero;
     public Rigidbody Rigidbody { get; private set; }
+    public float Speed => speed;
 
     // Start is called before the first frame update
     void Awake()
